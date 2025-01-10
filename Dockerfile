@@ -33,5 +33,6 @@ WORKDIR /usr/src/app
 # Include only the release build and production packages.
 COPY --from=build-target /usr/src/app/node_modules node_modules
 COPY --from=build-target /usr/src/app/.next .next
-
+EXPOSE 4001
+ENV PORT=4001
 CMD ["next", "start"]
